@@ -1,0 +1,29 @@
+<form 
+action="http://localhost:8080/ropa/"
+method="post"
+enctype="multipart/form-data"
+>
+    <label>Nombre del producto</label>
+    <input type="text" name="name">
+    <br>
+    <label>Marca</label>
+    <input type="text" name="brand">
+    <br>
+    <label>Precio</label>
+    <input type="number" name="price">
+    <br>
+    <label>Imagen:</label>
+    <input type="file" name="file">
+    <br>
+    <button type="submit" value="submit">Enviar</button>
+
+</form>
+
+{{#each ropa}}
+    <div>
+        <img src="http://localhost:8080/{{this.image}}" >
+        <h2>{{this.name}}</h2>
+        <p>{{this.brand}}</p>
+        <p>{{this.price}}$</p>
+    </div>
+{{/each}}
